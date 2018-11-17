@@ -45,7 +45,8 @@ p {
 h1,
 h2,
 h3,
-.c-decorative-heading {
+.c-decorative-heading,
+figcaption {
 
 	font-family: 'Josefin Sans', Arial, sans-serif;
 	text-transform: uppercase;
@@ -121,6 +122,41 @@ dd + dt {
 
 
 
+
+figure {
+
+	position: relative;
+	margin: 0;
+	max-height: 99mm;
+	overflow: hidden;
+
+}
+
+
+
+
+figcaption {
+
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	padding: 7.92mm 15.84mm;
+	color: #fff;
+	text-shadow: 0 0 3mm #000;
+
+}
+
+
+
+[data-layout="l-two-columns"] > * {
+
+	width: 50%;
+	float: left;
+
+}
+
+
+
 .o-list--unstyled {
 
 	list-style: none;
@@ -190,18 +226,11 @@ dd + dt {
 }*/
 
 
-[data-layout="l-two-columns"] > * {
-
-	width: 50%;
-	float: left;
-
-}
-
-
 
 .c-box {
 
 	padding: 15.84mm;
+	min-height: 98.9mm;
 	
 }
 
@@ -284,6 +313,15 @@ dd + dd {
 }
 
 
+.disclaimer {
+
+	margin-top: 7.92mm;
+	opacity: .4;
+	margin-bottom: 0;
+
+}
+
+
 @media print {
 
 	.c-box,
@@ -291,6 +329,29 @@ dd + dd {
 
 		height: 98.9mm;
 		overflow: hidden;
+
+	}
+
+}
+
+
+@media screen and ( max-width: 799px ) {
+
+	[data-layout="l-two-columns"] > * {
+
+		width: 100%;
+
+	}
+
+}
+
+
+
+@media screen and ( min-width: 800px ) {
+
+	[data-layout="l-two-columns"] > *:nth-of-type( 2n + 1 ) {
+
+		clear: left;
 
 	}
 
